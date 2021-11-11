@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ConvertRobot
+comment1.params=text
+comment1.target=java.lang.String\ standardize(java.lang.String)
+comment2.params=array
+comment2.target=java.lang.String[]\ standardizeArray(java.lang.String[])
+numComments=3
