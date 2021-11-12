@@ -24,11 +24,12 @@ public class Main{
         recetario.agregarReceta(receta4);recetario.agregarReceta(receta5);*/
         
         try{
-            /*ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream("recetas.txt"));
+            String ruta = new File("").getAbsolutePath();
+            /*ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(ruta+"/Prueba/recetas.txt"));
             escritor.writeObject(recetario);
             escritor.close();*/
             
-            ObjectInputStream lector = new ObjectInputStream(new FileInputStream("recetas.txt"));
+            ObjectInputStream lector = new ObjectInputStream(new FileInputStream(ruta+"/Prueba/recetas.txt"));
             Recetario p = (Recetario)lector.readObject();
             lector.close();
             
