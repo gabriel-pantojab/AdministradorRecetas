@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.target=Receta
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Receta\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=ingredientes
-comment1.target=int\ contarIngredientesContenidos(java.lang.String[])
-comment2.params=nuevosIngredientes
-comment2.target=boolean\ ingresarIngredientes(java.lang.String[])
-numComments=3
+comment1.params=titulo\ ingredientes
+comment1.target=Receta(java.lang.String,\ java.util.HashSet)
+comment1.text=\r\n\ autor\ ->\ object??\ ,\ review(rese\u00F1a){comentario,\ estrellita,\ autor}\ ->\ objeto\ ??\r\n
+comment2.params=ingredientes
+comment2.target=int\ contarIngredientesContenidos(java.lang.String[])
+comment3.params=nuevosIngredientes
+comment3.target=boolean\ ingresarIngredientes(java.lang.String[])
+numComments=4

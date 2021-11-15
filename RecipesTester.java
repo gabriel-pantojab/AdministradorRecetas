@@ -27,7 +27,7 @@ public class RecipesTester{
     
     @Test
     public void test1() {
-        Receta receta = new Receta(null, null, null, null, null);
+        Receta receta = new Receta(null, null);
         String[] nuevosIngredientes = {"sal", "papa", "leche", "arroz"};
         boolean report = receta.ingresarIngredientes(nuevosIngredientes);
         assertEquals(true, report);
@@ -40,7 +40,7 @@ public class RecipesTester{
         ingredientes.add(new Ingrediente("tomate"));
         ingredientes.add(new Ingrediente("arroz"));
         
-        Receta receta = new Receta("Sopa", "Esther", "bla bla", "bla bla bla", ingredientes);
+        Receta receta = new Receta("Sopa", ingredientes);
         
         String[] ingredientesProbar = {"sal", "papa", "leche", "arroz"};
         int cantidadContenida = receta.contarIngredientesContenidos(ingredientesProbar);
@@ -54,7 +54,7 @@ public class RecipesTester{
         ingredientes.add(new Ingrediente("tomate"));
         ingredientes.add(new Ingrediente("arroz"));
         
-        Receta receta = new Receta("Sopa", "Esther", "bla bla", "bla bla bla", ingredientes);
+        Receta receta = new Receta("Sopa", ingredientes);
         
         String[] ingredientesProbar = {"papa", "Tomáte", "ARROZ"};
         int cantidadContenida = receta.contarIngredientesContenidos(ingredientesProbar);

@@ -1,8 +1,6 @@
  
 
 
-
-import java.util.Set;
 import java.text.Normalizer;
 import java.util.*;
 
@@ -14,21 +12,15 @@ import java.util.*;
  */
 public class Receta {
     private String titulo;
-    private String descripcion;
-    private String autor;
-    private String preparacion;
+    private HashMap<Integer, String> preparacion;
     private HashSet<Ingrediente> ingredientes;
     
     /**
-     * Preparacion -> objeto???
      * autor -> object?? , review(reseña){comentario, estrellita, autor} -> objeto ??
      */
     
-    public Receta(String titulo, String autor, String descripcion, String preparacion, HashSet<Ingrediente> ingredientes) {
+    public Receta(String titulo, HashSet<Ingrediente> ingredientes) {
         this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.autor = autor;
-        this.preparacion = preparacion;
         this.ingredientes = ingredientes;
     }
     

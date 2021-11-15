@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=Recetario
-dependency1.to=Receta
+dependency1.from=Main
+dependency1.to=Recetario
 dependency1.type=UsesDependency
-dependency2.from=Main
-dependency2.to=Recetario
+dependency2.from=Recetario
+dependency2.to=Receta
 dependency2.type=UsesDependency
 objectbench.height=93
 objectbench.width=801
