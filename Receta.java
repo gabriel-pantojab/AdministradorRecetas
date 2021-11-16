@@ -1,6 +1,3 @@
- 
-
-
 import java.text.Normalizer;
 import java.util.*;
 
@@ -19,9 +16,9 @@ public class Receta {
      * autor -> object?? , review(reseña){comentario, estrellita, autor} -> objeto ??
      */
     
-    public Receta(String titulo, HashSet<Ingrediente> ingredientes) {
+    public Receta(String titulo) {
         this.titulo = titulo;
-        this.ingredientes = ingredientes;
+        this.ingredientes = new HashSet<Ingrediente>();
     }
     
     public int contarIngredientesContenidos(String[] ingredientes) {
@@ -37,8 +34,14 @@ public class Receta {
         return contenidos;
     }
     
-    public boolean ingresarIngredientes(String[] nuevosIngredientes) {    
-        return true;
+    public boolean ingresarIngrediente(String nombre, double cantidad, String unidad) {
+        Ingrediente nuevoIngrediente = new Ingrediente(ConvertRobot.standardize(nombre), cantidad, unidad);
+        boolean r = ingredientes.add(nuevoIngrediente);
+        return r;
+    }
+    
+    public int cantidadIngredientes() {
+        return ingredientes.size();
     }
 }
 

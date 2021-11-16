@@ -26,35 +26,44 @@ public class RecipesTester{
     }
     
     @Test
-    public void test1() {
-        Receta receta = new Receta(null, null);
-        String[] nuevosIngredientes = {"sal", "papa", "leche", "arroz"};
-        boolean report = receta.ingresarIngredientes(nuevosIngredientes);
+    public void testIngresarIngrediente() {
+        Receta receta = new Receta("Sopa");
+        String nombre = "papa";
+        double cantidad = 1;
+        String unidad = "kilo";
+        boolean report = receta.ingresarIngrediente(nombre, cantidad, unidad);
         assertEquals(true, report);
+    }
+    
+    @Test
+    public void testIngresarIngredienteRepetido() {
+        Receta receta = new Receta("Pique");
+        String nombre = "chorizo";
+        double cantidad = 1;
+        String unidad = "kilo";
+        assertEquals(true, receta.ingresarIngrediente(nombre, cantidad, unidad));
+        assertEquals(false, receta.ingresarIngrediente(nombre, cantidad, unidad));
     }
 
     @Test
     public void contarIngredientesContenidosReceta() {
-        HashSet<Ingrediente> ingredientes = new HashSet<Ingrediente>();
-        ingredientes.add(new Ingrediente("papa"));
-        ingredientes.add(new Ingrediente("tomate"));
-        ingredientes.add(new Ingrediente("arroz"));
-        
-        Receta receta = new Receta("Sopa", ingredientes);
+        Receta receta = new Receta("Sopa");
+        receta.ingresarIngrediente("papa", 1, "kilo");
+        receta.ingresarIngrediente("tomate", 0.5, "kilo");
+        receta.ingresarIngrediente("arroz", 1, "libra");
         
         String[] ingredientesProbar = {"sal", "papa", "leche", "arroz"};
+        
         int cantidadContenida = receta.contarIngredientesContenidos(ingredientesProbar);
         assertEquals(2, cantidadContenida);
     }
     
     @Test
-    public void test() {
-        HashSet<Ingrediente> ingredientes = new HashSet<Ingrediente>();
-        ingredientes.add(new Ingrediente("papa"));
-        ingredientes.add(new Ingrediente("tomate"));
-        ingredientes.add(new Ingrediente("arroz"));
-        
-        Receta receta = new Receta("Sopa", ingredientes);
+    public void contarIngredientesContenidos2() {
+        Receta receta = new Receta("Sopa");
+        receta.ingresarIngrediente("Papa", 1, "kilo");
+        receta.ingresarIngrediente("tomaté", 0.5, "kilo");
+        receta.ingresarIngrediente("arRoz", 1, "libra");
         
         String[] ingredientesProbar = {"papa", "Tomáte", "ARROZ"};
         int cantidadContenida = receta.contarIngredientesContenidos(ingredientesProbar);
@@ -70,7 +79,14 @@ public class RecipesTester{
     
     @Test
     public void getTituloIngrediente() {
-        Ingrediente ingrediente = new Ingrediente("tomate");
+        Ingrediente ingrediente = new Ingrediente("tomate", 1, "kilo");
         assertEquals("tomate", ingrediente.getNombre());
+    }
+    
+    @Test
+    public void equalsTest() {
+        Ingrediente ing1 = new Ingrediente("papa", 1, "kilo");
+        Ingrediente ing2 = new Ingrediente("papa", 2, "kilo");
+        assertTrue(ing1.equals(ing2));
     }
 }

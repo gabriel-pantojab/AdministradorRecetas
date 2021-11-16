@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.target=Ingrediente
-comment1.params=nombre
-comment1.target=Ingrediente(java.lang.String)
+comment1.params=nombre\ cantidad\ unidad
+comment1.target=Ingrediente(java.lang.String,\ double,\ java.lang.String)
 comment2.params=
 comment2.target=java.lang.String\ getNombre()
-numComments=3
+comment3.params=o
+comment3.target=boolean\ equals(java.lang.Object)
+comment4.params=
+comment4.target=int\ hashCode()
+numComments=5
